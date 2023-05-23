@@ -1,0 +1,28 @@
+.boton-categorias__Shop{
+    display: flex;
+    align-items: center;
+    gap: .3em;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: .9em;
+    text-transform: uppercase;
+    padding: 1em;
+    cursor: pointer;
+    width: 100%;
+}
+
+.boton-categorias__Shop > span{
+    font-size: 1.3em;
+    transition: transform ease-in-out .2s;
+
+}
+
+.boton-categorias__Shop:focus{
+    border-bottom: 1px solid white;
+}
+
+.boton-categorias__Shop:focus > span{
+
+    transform: rotate(90deg);
+}

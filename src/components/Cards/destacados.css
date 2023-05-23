@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.destacados{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    background-color: rgb(230, 50, 50);
+    color: white;
+    font-size: 1em;
+    z-index: 1000;
+    top: -.5em;
+    box-shadow: 3px 3px 5px rgba(100, 100, 100, 0.5);
+    padding: .5em;
+    cursor: pointer;
+    transition: transform ease-in-out .1s;
+    width: 4.3em;
+    left: .5em;
+    height: 6.5em;
+
+  }
+
+  .destacados-off{
+    display: none;
+  }
+
+  .destacados > p{
+    font-size: .7em;
+  }
+
+  .destacado__span{
+    font-weight: 600;
+  }
+
+  .calificacion{
+    display: flex;
+    align-items: center;
+    gap: .3em;
+  }
+
+  .calificaion-numero{
+    padding-top: .2em;
+    opacity: 0;
+    transition: transform ease-in-out .2s .1s, opacity ease-in-out .2s .1s;
+    font-size: .7em;
+    transform: translate(-3px);
+  }
+
+  .calificacion > .star{
+    transform: translate(-.8em) scale(1.5);
+
+    transition: transform ease-in-out .2s .1s;
+
+  }
+
+  .destacados:hover{
+    transform: translatey(7px);
+  }
+
+  .destacados:hover > .calificacion > .star{
+    transform: translate(0em) scale(1);
+    
+  }
+
+  .destacados:hover >.calificacion > .calificaion-numero{
+    opacity: 1;
+    transform: translate(2px);
+  }

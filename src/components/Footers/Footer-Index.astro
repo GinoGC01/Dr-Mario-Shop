@@ -1,0 +1,302 @@
+---
+
+---
+
+<footer>
+    <div class="copy">
+        <h4>copyright © | Dr. Mario IND | Todos los derechos reservados</h4>
+    </div>
+    <div class="content">
+        <div class="img-footer">
+            <h3>Store </h3>
+            <span class="material-symbols-outlined">arrow_right_alt</span>
+            <img src="images/isotipo blanco.png" alt="isotipo blanco Dr mario">
+        </div>
+        <div class="links">
+            <h3>Navegación </h3>
+            <ul>
+                <li class="link-li">
+                    <a href="/Dr.-Mario-Shop/">Home</a>
+                </li>
+                <li class="link-li">
+                    <a href="/Dr.-Mario-Shop/Shop/">Shop</a>
+                </li>
+                <li class="link-li">
+                    <a href="#">Contact</a>
+                </li>
+                <li class="link-li">
+                    <a href="/Dr.-Mario-Shop/Preguntas-Frecuentes/">Preguntas frecuentes</a>
+                </li>
+                <li class="link-li">
+                    <a href="#">Ocurrió un 
+                    problema</a>
+                </li>
+            </ul>
+        </div>
+        <div class="contacto">
+        <h3>Contacto </h3>
+            <ul class="ul-general">
+                <li>
+                    <p> • Teléfono: +54 11 4023-0671</p>
+                </li>
+                <li>
+                    <p>• Email: DrMario-ind@gmail.com</p>
+                </li>
+                <ul class="rrss">
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+        
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </ul>
+
+        </div>
+        <div class="pago">
+        <h3>Metodos de pago</h3>
+            <div class="metodos-de-pago">
+                <div class="metodo"><img src="images/metodos-pago/brubank.png" alt="brubank"></div>
+                <div class="metodo"><img src="images/metodos-pago/cuentaDNI.webp" alt="brubank"></div>
+                <div class="metodo"><img src="images/metodos-pago/MercadoPago.webp" alt="brubank"></div>
+                <div class="metodo"><img src="images/metodos-pago/Modo.png" alt="brubank"></div>
+                <div class="metodo"><img src="images/metodos-pago/transferencia.png" alt="brubank"></div>
+                <div class="metodo"><img src="images/metodos-pago/Uala.png" alt="brubank"></div>
+            </div>
+        </div> 
+    </div>
+</footer>
+
+<style>
+    *{
+                margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        font-family:'Roboto', sans-serif;
+        scroll-behavior: smooth;
+     }
+
+    :root{
+        --black:rgb(12, 12, 12);
+        --white: rgb(245, 245, 245);
+        --amarillo:rgb(255, 255, 40);
+    }
+
+    footer{
+        width: 100%;
+        height: 35em;
+        background-color: var(--black);
+        margin-top: 50px;
+        position: relative;
+    }
+
+    .copy{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .copy > h4{
+        color: white;
+        width: 100%;
+        text-align: center;
+        font-weight: 300;
+        padding: 1.5em;
+        background-color: rgb(20, 20, 20);
+    }
+
+    .content{
+        width: 70%;
+        height: 85%;
+        margin: auto;
+        padding: 3em 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1em;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+
+    .links, .contacto, .img-footer, .pago{
+        flex: 1 0 10em;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    h3{
+        width: 10em;
+        display: inline;
+        font-size: 1.3em;
+        padding-bottom: .5em;
+        color: white;
+        border-bottom: 2px solid white;
+    }
+
+    span{
+        color: white;
+        flex: 1;
+        padding-top: 1em;
+    }
+
+    .links > ul {
+        flex: 1;
+        padding-top: 3em;
+
+    }
+
+    .link-li{
+        margin-top: 1em;
+        list-style: circle;
+        color: white;
+    }
+
+    .link-li > a{
+        font-size: 1.5em;
+        color: var(--white);
+        font-weight: 300;
+    }
+
+    .contacto{
+        padding: 0;
+    }
+
+    .contacto > ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .contacto > ul{
+        display: flex;
+        justify-content: space-between;
+        padding: 1em 0;
+        flex: 1;
+    }
+
+
+    .contacto > ul > ul{
+        display: flex;
+        justify-content: flex-start;
+        gap: 2em;
+        padding: 2em 0;
+        flex: 1;
+    }
+
+    .contacto > ul > ul > li > a {
+        color: white;
+        font-size:  2.5em;
+    }
+
+
+    .ul-general > li{
+        margin-top: .5em;
+    }
+
+    .ul-general > li > p {
+        color: white;
+        font-size: 1em;
+    }
+
+    .pago{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .metodos-de-pago{
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(6em, 1fr));
+        grid-template-rows: repeat(2, 3em);
+        gap: .5em;
+        padding-top: 3em;
+        flex: 1;
+        
+
+    }
+
+    .metodo{
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3em;
+        width: 6em;
+        padding: .5em;
+        border-radius: 0 10px;
+    }
+
+    .metodo > img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .img-footer > img{
+        width: 25em;
+        position: absolute;
+        left: 0;
+        opacity: .1;
+    }
+
+    @media screen and (max-width:600px){
+
+        footer{
+            height: auto;
+        }
+
+        .content{
+            height: auto;
+            gap: 2em;
+            width: 90%;
+        }
+
+        .links, .rrss, .img-footer, .pago{
+            justify-content: center;
+        }
+
+        .link-li > a{
+            font-size: 1em;
+        }
+
+        .metodos-de-pago{
+            padding-bottom: 4em;
+        }
+
+        .rrss{
+            padding: 0;
+        }
+
+        .rrss > ul{
+            justify-content: center;
+            gap: 1.5em;
+        }
+
+        .links > ul,.rrss > ul{
+            padding-top: 1em;
+        }
+
+        .img-footer > img{
+             width: 13em;
+            bottom: 0;
+        }
+        
+
+    }
+
+    
+</style>

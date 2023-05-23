@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from '../components/Headers/Header.astro'
+import {CardsProductosNovedades} from '../components/Templates/CardsProductosNovedades'
+import {productosDisponibleAleatorios} from '../sources/Stock-linear'
+import Footer from '../components/Footers/Footer.astro'
+import ProductoSeleccionado from '../components/Templates/ProductoSeleccionado'
+---
+
+<Layout title='Producto Seleccionado'>
+    <Header home="/Dr.-Mario-Shop" about="/Dr.-Mario-Shop/#about" shop="/Dr.-Mario-Shop/Shop/"/>
+    <div>
+        <ProductoSeleccionado client:load/>
+    </div>
+    <div class="contenedor-slide__Novedades">
+        <h3 class="seguir-comprando">
+			<span class="material-symbols-outlined">arrow_right_alt</span>
+            <p>Seguir Comprando</p>
+        </h3>
+        <CardsProductosNovedades productos={productosDisponibleAleatorios} client:load/>
+    </div>
+    <Footer/>
+</Layout>
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: rgb(240, 240, 240);
+    }
+
+    .contenedor-slide__Novedades{
+        width: 90%;
+        margin: auto;
+    }
+
+    .seguir-comprando{
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        font-size: 2em;
+        text-transform: uppercase;
+        background-color: white;
+        padding: 1em 1em 0;
+    }
+
+    .seguir-comprando > span{
+        font-size: 1.5em;
+    }
+
+    @media screen and (max-width:1300px){
+        .contenedor-slide__Novedades{
+            width: 100%;
+        }
+    }
+    
+</style>
+
+

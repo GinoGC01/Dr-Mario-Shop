@@ -1,0 +1,265 @@
+---
+export interface props{
+    home:string,
+    about:string,
+    shop: string,
+}
+
+const {home, about, shop} = Astro.props;
+---
+
+<header>
+    <div class="logo-desktop">
+        <img src="../images/Logotipo letras negro.png" alt="logo-Dr.Mario">
+    </div>
+    <div class="logo-mobile white">
+        <img src="../images/isotipo negro.png" alt="logo-Dr.Mario">
+    </div>
+    <div class="logo-mobile black">
+        <img src="../images/Logotipo letras negro.png" alt="logo-Dr.Mario">
+    </div>
+
+    <nav class="nav">
+        <div class="logo-mobile black logo-nav">
+            <img src="../images/Logotipo letras negro.png" alt="logo-Dr.Mario">
+        </div>
+        <ul class="ul">
+            <li class="li"><a href={home}>
+                <span class="material-symbols-outlined">chevron_right</span>
+                Home
+            </a></li>
+            <li class="li"><a href={about}>
+                <span class="material-symbols-outlined">chevron_right</span>
+                About
+            </a></li>
+            <li class="li"><a href={shop}>
+                <span class="material-symbols-outlined">chevron_right</span>
+                Shop
+            </a></li>
+        </ul>
+    </nav>
+
+    <div class="menu-mobile">
+        <span class="material-symbols-outlined menu-hamb">menu</span>
+        <span class="material-symbols-outlined menu-close">close</span>
+    </div>
+</header>
+
+<script>
+    // el "!" le dice a typescript que la variable nunca será nula
+    const menuHamb:Element = document.querySelector('.menu-hamb')!;
+    const menuClose:Element = document.querySelector('.menu-close')!;
+    const nav:Element = document.querySelector('.nav')!;
+
+    menuHamb.addEventListener('click', ()=>{
+        nav.classList.toggle('show');
+        menuClose.classList.add('close-show');
+        menuHamb.classList.add('hamb-close');
+    })
+
+    menuClose.addEventListener('click', ()=>{
+        nav.classList.toggle('show');
+        menuHamb.classList.remove('hamb-close');
+        menuClose.classList.remove('close-show');
+
+    })
+
+</script>
+
+<style>
+
+    :root{
+        --black:rgb(12, 12, 12);
+        --white: rgb(245, 245, 245);
+        --grey: rgb(241, 241, 241);
+        --grey-op: rgb(182, 182, 182);
+
+    }
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+
+    }
+
+    /* mobile */
+    .logo-mobile > img{
+        display: none;
+    }
+
+    .menu-mobile{
+        display: none;
+    }
+
+    /* Desktop */
+
+    header{
+        position: relative;
+        width: 85%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin: 0 auto;
+        z-index: 500;
+        border-bottom: 1px solid black;
+    }
+
+    .logo-desktop > img{
+        width: 220px;
+    }
+
+    .ul{
+        display: flex;
+        gap: 4em;
+    }
+
+    .li > a{
+        font-size: 1.5em;
+        color:var(--black);
+        text-decoration: none;
+        padding: 5px;
+        transition: color ease-in-out .3s;
+    }
+
+    .li > a:hover{
+        outline: 1px solid rgb(100, 100, 100);
+        color: rgb(37, 37, 37);
+    }
+
+    .li > a > span {
+        display: none;
+    }
+
+    @media screen and (max-width: 1300px){
+        .li > a{
+            color: var(--black);
+        }
+        
+        .logo-desktop{
+            display: none;
+        }
+
+        .black > img{
+            display: block;
+            width: 220px;
+        }
+
+        .white{
+            display: none;
+        }
+
+        .logo-nav{
+            display: none;
+        }
+
+    }
+
+    @media screen and (max-width: 700px){
+
+        header{
+            background-color: var(--white);
+            width: 100%;
+            position: relative;
+        }
+
+        .logo-desktop{
+            display: none;
+        }
+
+        .logo-mobile > img{
+            display: block;
+            width: 10em;
+        }
+
+        .logo-nav{
+            display: block;
+            padding: 1.25em;
+            width: 100%;
+            
+        }
+
+        .menu-mobile{
+            position: relative;
+            height: 2.5em;
+            width: 2.5em;
+            display: block;
+        }
+
+        .menu-hamb, .menu-close{
+            position: absolute;
+            margin: auto;
+        }
+
+        .menu-hamb{
+            font-size: 2.5em;
+        }
+
+        .hamb-close{
+            display: none;
+            overflow: hidden;
+        }
+
+        .menu-close{
+            font-size: 0;
+            overflow: hidden;
+            color: var(--white);
+            position: fixed;
+
+        }
+
+        .close-show{
+            font-size: 2.5em;
+        }
+        
+
+        .nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100vh;
+            overflow: hidden;
+            transition: width ease-in-out .2s;
+            background-color: var(--white);
+        }
+
+        .show{
+            width: 70%;
+            box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+
+        }
+
+        .ul{
+            flex-direction: column;
+            padding: 25px 0 25px 15px;
+            height: 100%;
+            width: 100%;
+        }
+
+        .li{
+            border-bottom: 1px solid var(--black);
+            padding-bottom: 10px;
+            width: 13em;
+        }
+
+        .li > a{
+            color: var(--black);
+        }
+
+        .li > a > span {
+            display: inline-block;
+            transform: translateY(5px);
+        }
+
+        .li > a:hover{
+            outline: none;
+        }
+    }
+
+    
+</style>

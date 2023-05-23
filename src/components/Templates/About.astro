@@ -1,0 +1,329 @@
+---
+import SliderPrincipal from '../Banners/SliderPrincipal'
+const imagen1 = '../../../../images/champion-aqua-slider.png'
+const imagen2 = '../../../../images/Everlast-slider-1.png'
+const imagen3 = '../../../../images/nike-slider.png'
+
+---
+
+<section id="about">
+    <div class="sub-section__about sub-01">
+        <h2 class="about">
+            Sobre Nosotros
+        </h2>
+        <h3 class="objetivo">
+            Nuestro objetivo
+        </h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto vitae accusamus dignissimos doloribus tenetur sequi omnis aut? Ab earum quo esse! Earum ad tenetur nostrum aliquid maxime tempora modi soluta.
+        Corporis labore maxime eaque architecto voluptates cumque maiores hic dolor vero. Eaque perspiciatis maxime animi repellendus dolores reprehenderit deserunt itaque quaerat, voluptatibus minima earum culpa repellat pariatur nulla minus adipisci.</p>
+    </div>
+    <div class="sub-section__about sub-02">
+        <div class="img-decoration">
+            <img src="images/Logotipo letras negro.png" alt="Dr. Mario decoration" class="img-opacity">
+        </div>
+        <div class="text-content">
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsum nesciunt error porro. Sequi autem dicta ad eligendi dolorem magni eum necessitatibus doloribus, error id officia doloremque consequuntur quod suscipit.</p>
+        </div>
+        <div class="img">
+            <img src="images/sources-images/recorte.webp" alt="Campera" class="img-01">
+            <img src="images/sources-images/bob-sp.webp" alt="Campera" class="img-02">
+        </div>
+    </div>
+    <SliderPrincipal client:load image01={imagen1} image02={imagen2} image03={imagen3}/>
+    <div class="sub-section__about sub-04">
+        
+        <div class="text-content txt-sub-04">
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsum nesciunt error porro. Sequi autem dicta ad eligendi dolorem magni eum necessitatibus doloribus, error id officia doloremque consequuntur quod suscipit.</p>
+        </div>
+        <div class="images">
+            <div class="img-04 arriba">
+                <img src="images/sources-images/mymGreen.webp" alt="Campera">
+            </div>
+            <div class="img-04 abajo">
+                <img src="images/sources-images/mymGreenSale.webp" alt="Campera">
+            </div>
+            
+        </div>
+            
+            
+    </div>
+    
+</section>
+
+
+<style>
+    *{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+    :root{
+    --black:rgb(12, 12, 12);
+    --white: rgb(245, 245, 245);
+    --gris: rgb(100, 100, 100);
+    --grey: rgb(241, 241, 241);
+    --amarillo:rgb(255, 255, 40);
+    --h3:1.2em;
+    --h4:2em;
+    --p:1.2em;
+
+    }
+
+    section{
+        width: 100%;
+        margin: 50px auto;
+        padding-bottom:50px ;
+    }
+
+    .sub-section__about{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin: auto;
+        
+    }
+
+    .sub-01{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1em;
+        background-color: var(--black);
+        background-image: url('/public/images/fondo-Dr-Mario.png');
+        background-attachment: fixed;
+        color: var(--white);
+        padding: 9em 0;
+        box-shadow: 0 10px 35px rgba(255, 255, 255, .04);
+    }   
+
+    .sub-01 > h2{
+        font-size: 1.5em;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .sub-01 > h3{
+        font-size: 3em;
+    }
+
+    .sub-01 > p{
+        max-width: 50%;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+
+     .sub-02,.sub-04{
+        position: relative;
+        margin: 3em auto;
+        justify-content: center;
+        align-items: center;
+        padding: 1em 3em;
+        box-shadow: 10px 10px 0px rgba(0, 0, 0, .2);
+
+    }
+
+    .sub-02{
+        background-color: #f7d160;
+
+        
+    }
+
+    .sub-04{
+        flex-direction: row-reverse;
+        background-color: #a7e6ba;
+
+    }
+    
+    /* text content */
+    .sub-02 > .text-content{
+        width: 100%;
+        padding: 10em 9em 10em 0em;
+    }
+
+    .sub-04 > .text-content{
+        width: 100%;
+        padding: 10em 3em 3em 3em;
+    }
+
+    .text-content > h3{
+        font-size: var(--h3);
+        margin-bottom: 1em;
+        color: rgba(104, 104, 104, 0.527);
+    }
+
+    .text-content > h4{
+        font-size: var(--h4);
+        margin-bottom: .5em;
+    }
+
+    .text-content > p{
+        font-size: var(--p);
+    }
+
+    .sub-02 > .text-content > p{
+        margin-top: 3em;
+    }
+    /* IMGS */
+
+    /* 02 */
+
+    .img{
+        display: flex;
+        position: relative;
+        justify-content: flex-end;
+    }
+
+    .img > .img-01{
+        position: relative;
+        z-index: 500;
+        max-width: 15em;
+        height: 30em;
+        box-shadow: 5px 5px 0px rgba(0, 0, 0, .2), 0 0 20px rgba(0, 0, 0, .2);
+        object-fit: cover;
+        transform: rotate(5deg) translate(1em, 0em);
+
+
+    }
+    .img > .img-02{
+        max-width: 30em;
+        min-width: 15em;
+        box-shadow: 10px 10px 0px rgba(0, 0, 0, .2);
+        object-fit: cover;
+    }
+
+    .img-decoration{
+        top: 2em;
+        left: 0;
+        width: 35em;
+        position: absolute;
+        opacity: .1;
+    }
+
+    .img-decoration > img{
+        width: 100%;
+    }
+
+    /* 04 */
+
+    .images{
+        display: flex;
+        position: relative;
+    }
+
+    .img-04{
+        width: 22em;
+    }
+
+    .img-04 > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .abajo, .arriba{
+        box-shadow: 10px 10px 0px rgba(0, 0, 0, .2), 0 0 10px rgba(0, 0, 0, .3);
+    }
+    
+    .abajo{
+        height: 35em;
+        transform: rotate(10deg) translateX(0);
+    }
+    
+
+    @media screen and (max-width: 1400px){
+        section{
+            margin-top: 0;
+        }
+        .img > .img-01{
+            min-width: 10em;
+
+        }
+
+        .img > .img-02{
+            min-width: 10em;
+            max-width: 25em;
+        }
+
+        .sub-02 > .text-content{
+            padding: 3.5em 2em;
+        }
+
+         .sub-04 > .text-content{
+            padding:2em;
+        }
+    }
+
+     @media screen and (max-width: 600px){
+
+        section{
+            margin: 5px auto;
+            padding-bottom:0px ;
+        }
+
+        .sub-section__about{
+            width: 100%; 
+        }
+
+        .sub-section__about{
+            overflow: hidden;
+        }
+
+        .sub-01 > h2{
+        font-size: .8em;
+        }
+
+        .sub-01 > h3{
+            font-size: 1.9em;
+        }
+
+        .sub-01 > p{
+            max-width: 95%;
+            font-size: 1em;
+
+        }
+
+        .sub-02 > .text-content{
+            margin: auto;
+            padding: 3.5em 3em;
+       }
+
+        .img > .img-01{
+            min-width: 10em;
+            height: 20em;
+
+        }
+        .img > .img-02{
+            width: 17em;
+        }
+
+        .img-decoration{
+            top: 0em;
+            width: 100%;
+        }
+
+        /* 04 */
+        .sub-04 > .text-content{
+            margin: auto;
+            padding: 1.5em 3em;
+        }
+
+        .abajo{
+            height: 20em;
+            transform: rotate(10deg) translateX(-.5em);
+        }
+
+
+        
+    }
+
+
+</style>

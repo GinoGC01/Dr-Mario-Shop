@@ -1,0 +1,61 @@
+.cards-conteiner__productos-Destacados{
+    position: relative;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .2em;
+    padding: 0 2em;
+  }
+
+.cards-conteiner__productos-Destacados > div:nth-child(1),
+.cards-conteiner__productos-Destacados > div:nth-child(4),
+.cards-conteiner__productos-Destacados > div:nth-child(5){
+    flex: 4 0 35em;
+}
+
+.cards-conteiner__productos-Destacados > div:nth-child(2),
+.cards-conteiner__productos-Destacados > div:nth-child(3),
+.cards-conteiner__productos-Destacados > div:nth-child(6){
+    flex: 1 0 30em;
+
+}
+
+
+@media screen and (max-width: 1280px){
+    .cards-conteiner__productos-Destacados > div:nth-child(1),
+    .cards-conteiner__productos-Destacados > div:nth-child(4),
+    .cards-conteiner__productos-Destacados > div:nth-child(5){
+        flex: 4 0 25em;
+    }
+    
+    .cards-conteiner__productos-Destacados > div:nth-child(2),
+    .cards-conteiner__productos-Destacados> div:nth-child(3),
+    .cards-conteiner__productos-Destacados > div:nth-child(6){
+        flex: 1 0 20em;
+    
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .cards-conteiner{
+        padding: 0;
+        width: 100%;
+        gap: 1em;
+    }
+
+    .cards-conteiner__productos-Destacados > div:nth-child(1),
+    .cards-conteiner__productos-Destacados > div:nth-child(4),
+    .cards-conteiner__productos-Destacados > div:nth-child(5),
+    .cards-conteiner__productos-Destacados > div:nth-child(2),
+    .cards-conteiner__productos-Destacados > div:nth-child(3),
+    .cards-conteiner__productos-Destacados > div:nth-child(6){
+        flex: 1 0 15em;
+        margin: auto;
+}
+
+
+
+}

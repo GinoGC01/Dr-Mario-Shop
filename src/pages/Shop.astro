@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Headers/Header.astro";
+import ProductosShop from '../components/Templates/ProductosShop'
+import Footer from "../components/Footers/Footer.astro";
+import {productosDisponibleStock} from '../sources/Stock-linear'
+import Shop from '../components/Templates/Shop'
+import {productoDetalle, productosCarrito} from '../sources/LocalStorage'
+
+---
+<Layout title="Shop">
+    <div class="productos">
+        <Shop productos={productosDisponibleStock}  client:load/>
+    </div>        
+    <Footer/>
+</Layout>
+
+<style>
+   
+</style>

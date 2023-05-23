@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header-container__Shop{
+    top: 0;
+    position: sticky;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.logo{
+    padding: 2em 0;
+    width: 80%;
+}
+
+.logo > img{
+    width: 100%;
+}
+
+.buzos-header__shop-Active{
+    background-color: aliceblue;
+}
+
+
+.footer-shop{
+    color: white;
+    font-size: .9em;
+    text-align: center;
+    padding: .5em;
+}
+

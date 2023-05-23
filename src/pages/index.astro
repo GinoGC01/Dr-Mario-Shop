@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderIndex from '../components/Headers/HeaderIndex.astro';
+import About from '../components/Templates/About.astro';
+import FooterIndex from '../components/Footers/Footer-Index.astro';
+import {CardsProductos} from '../components/Templates/CardsProductosDestacados.jsx';
+import {CardsProductosNovedades} from '../components/Templates/CardsProductosNovedades'
+import SliderPrincipal from '../components/Banners/SliderPrincipal'
+import {productosDisponible} from '../sources/Stock-linear'
+
+import Productos from '../sources/buzos.json';
+
+interface Producto {
+  id: string;
+  cantidad: number;
+  tipo: string;
+  nombre: string;
+  stock: boolean;
+  talle: {
+    talle: string;
+    detalle: string;
+  };
+  precio: number;
+  description: string;
+  marca: string;
+  img: {
+    image01: string;
+    image02: string;
+    image03: string;
+    image01Index: string;
+    image02Index: string;
+    image03Index: string;
+  };
+  calificacion: number;
+  destacado?: string; // Propiedad opcional agregada
+}
+function ProductosDestacados (){
+    const stock:Producto[] = [...Productos].filter(producto => {return(producto.stock ? true : false)})
+    let destacados:Producto[] = []
+    stock.forEach(producto => {
+		if(typeof producto.calificacion === "number" && producto.calificacion >= 9.5){
+        producto.destacado = "destacado";
+        destacados.push(producto);
+      }
+    });
+
+    let productosDestacados = destacados.sort(()=>Math.random()>0.5 ? 1 : -1);
+    return (productosDestacados.slice(0,6))
+}
+
+
+
+const ArregloProductosDestacados = ProductosDestacados();
+
+// slider
+const imagen1 = '../../../images/champion-aqua-slider.png'
+const imagen2 = '../../../images/Everlast-slider-1.png'
+const imagen3 = '../../../images/nike-slider.png'
+
+---
+
+<Layout title="Dr. Mario IND">
+	<HeaderIndex home="#home" about="#about" shop="/Dr.-Mario-Shop/Shop/" />
+	<SliderPrincipal image01={imagen1} image02={imagen2}  image03={imagen3}client:load/>
+	<div class="productos-destacados">
+		<div class="title__productos-destacados">
+			<span class="material-symbols-outlined">arrow_right_alt</span>
+			<h3> NOVEDADES</h3>
+		</div>
+		<CardsProductosNovedades client:load productos={productosDisponible} />
+	</div>
+	<!-- <Banner01/> -->
+	<div class="productos-destacados">
+		<div class="title__productos-destacados">
+			<span class="material-symbols-outlined">arrow_right_alt</span>
+			<h3> PRODUCTOS DESTACADOS</h3>
+		</div>
+		<CardsProductos client:load productos={ArregloProductosDestacados} />
+	</div>
+	<!-- <Main/> -->
+	<About/>
+	<FooterIndex/>
+</Layout>
+
+<style>
+	*{
+        scroll-behavior: smooth;
+	}
+
+
+	.productos-destacados{
+		width: 80%;
+		margin: 50px auto;
+
+	}
+
+	.title__productos-destacados{
+		display: flex;
+		align-items: center;
+		gap: 1em;
+		margin: 20px 0;
+		font-size: .6em;
+	}
+
+	.title__productos-destacados > span {
+		font-size: 3.2em;
+	}
+
+	.title__productos-destacados > h3{
+		font-size: 3.2em;
+	}
+
+	@media screen and (max-width:600px){
+		.productos-destacados{
+			width: 100%;
+			padding: 1em;
+		}
+	}
+
+</style>
+

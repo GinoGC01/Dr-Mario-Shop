@@ -1,0 +1,112 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../components/archivos-css/Carrito.css"
+---
+
+<Layout title="Carrito shop">
+<section class="carrito">
+    <aside class="aside">
+        <div class="logo"><img src="../images/Logotipo letras blanco.png" alt="logo-dr.mario"></div>
+        <nav class="nav">
+            <ul class="ul">
+                <li><a href="/Dr.-Mario-Shop/Shop/">
+                    <span class="material-symbols-outlined">keyboard_backspace</span>
+                    Volver a la tienda
+                </a></li>
+        
+                <li><button class="button">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <span id="numero-articulos">0</span>
+                </button></li>
+        
+            </ul>
+        </nav>
+    
+        <footer>
+            © 2023 - Todos los derechos reservados
+        </footer>
+    </aside>
+    <main class="main">
+        <div class="productos-carrito" id="productos-carrito-container">
+            
+            <header class="header-carrito">
+                <h2>Carrito</h2>
+                <div class="menu-hamb">
+                    <span class="material-symbols-outlined menu">menu</span>
+                    <span class="material-symbols-outlined close">close</span>
+                </div>
+            </header>
+            
+            
+            <p id="carrito-vacio">No hay productos en el carrito</p>
+            <div class="carrito__productos-carrito" id="carrito-productos">
+                <!-- con el js -->
+                
+            </div>
+        </div>
+    
+        <div class="carrito-acciones disabled" id="carrito-acciones">
+            <div class="carrito-acciones-izquierda">
+                <button class="carrito-acciones-vaciar">
+                    <span class="material-symbols-outlined">remove_shopping_cart</span>
+                    Vaciar carrito
+                </button>
+            </div>
+            <div class="carrito-acciones-derecha">
+                <div class="carrito-acciones-total">
+                    <p>Total: <span id="precio-total"> $3000</span></p>
+                </div>
+                <button class="carrito-acciones generar-orden"> 
+                    <p>Generar orden</p>
+                    <span class="material-symbols-outlined">note_add</span>
+                </button>
+            </div>
+    
+        </div>
+
+        <form id="form-compra" class="formulario-carrito form-disabled" action="https://formsubmit.co/04398c30fadfaa88835d667f5b5793c6" method="POST">
+            <div class="orden-id">
+                <h3>Generar orden de compra</h3>
+                <p class="id-orden"></p>
+            </div>
+            <p>Complete el siguiente formulario para generar una orden de compra</p>
+            <p class="aviso-1">Asegurese de anotar el número de orden por cualquier inconveniente <span class="span-aviso-1">(123-ABCD)</span></p>
+            <a href="#" class="pregunta-orden">¿Qué es una orden de compra?</a>
+            <input type="hidden" name="_next" value="https://ginogc01.github.io/Dr.-Mario-Shop/Orden-Realizada/">
+            <div class="input">
+                <input type="hidden" name="productos" id="input-productos-form" value="">
+            </div>
+            <div class="input">
+                <input type="hidden" name="IdOrden" id="input-productos-form-ID" value="">
+            </div>
+            <div class="input">
+                <input type="text" name="nombre" id="input-productos-form-name" placeholder="Nombre Apellido" required autocomplete="on">
+                <label for="input-productos-form-name">Nombre y Apellido</label>
+            </div>
+            <div class="input">
+                <input type="number" name="numberPhone" id="input-productos-form-phone" placeholder="11 2222-3333" required autocomplete="on">
+                <label for="input-productos-form-phone">Número de teléfono</label>
+            </div>
+            <div class="input">
+                <input type="email" name="email" id="input-productos-form-email" placeholder="email@email.com" required autocomplete="on">
+                <label for="input-productos-form-email">Email</label>
+            </div>
+            <div class="input">
+                <input type="text" name="direccion" id="input-productos-form-direcction" placeholder="Av. 9 de Julio..." required autocomplete="on">
+                <label for="input-productos-form-direcction">Dirección (para envío)</label>
+            </div>
+            <div class="input">
+                <input type="text" name="referencias-direccion" id="input-productos-form-referencias-direcction" placeholder="Frente a.." required autocomplete="on">
+                <label for="input-productos-form-referencias-direcction">Referencias</label>
+            </div>
+
+            <button type="submit" id="generador-orden"> <p>Generar orden de compra</p> 
+                <span class="material-symbols-outlined generador-orden-arrow">double_arrow</span>
+            </button>
+        </form>
+        <p class="carrito-comprado disabled" id="mensaje-compra">Se generó una orden de compra</p>
+    </main>
+</section>
+</Layout>
+
+<script src="../components/archivos-js/Carrito.js"></script>

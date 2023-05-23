@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carrito-container__producto-detalle{
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    margin-top: 1em;
+}
