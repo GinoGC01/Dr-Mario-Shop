@@ -8,9 +8,9 @@ export default function HeaderShop({funcionCategorias, funcionSubCategorias}) {
 
   return (
     <aside className='header-container__Shop'>
-        <div className="logo">
+        <a href='/Dr-Mario-Shop/' className="logo">
             <img src="../../../public/images/Logotipo letras blanco.png" alt="Logo Dr. Mario Shop" />
-        </div>
+        </a>
         <nav>
             <ul>
                 <li>

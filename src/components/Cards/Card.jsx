@@ -31,7 +31,7 @@ export function Card({producto, funcion}){
                   </SwiperSlide>
                 </Swiper>
             </div>
-              <a href="/Dr.-Mario-Shop/Producto" className="datos-card__Card" id={producto.id} onClick={funcion}>
+              <a href="/Dr-Mario-Shop/Producto" className="datos-card__Card" id={producto.id} onClick={funcion}>
                 <h3 className="nombre__Card">{producto.nombre}</h3>
                 <p className="talle__Card">Talle: <strong>{producto.talle.talle}</strong></p>
                 <p className="marca__Card">Marca:<strong> {producto.marca}</strong></p>

@@ -14,7 +14,7 @@ export default function Carrito01({ productosCarrito }) {
   }, [productosCarrito]);
 
   return (
-    <a href="/Dr.-Mario-Shop/Carrito/" className="carrito__producto-Detalle">
+    <a href="/Dr-Mario-Shop/Carrito/" className="carrito__producto-Detalle">
       <span className="material-symbols-outlined double-arrow__producto-detalle">double_arrow</span>
       <div className="cart__producto-detalle">
         <span className="material-symbols-outlined carrito-span__producto-Detalle">shopping_cart</span>

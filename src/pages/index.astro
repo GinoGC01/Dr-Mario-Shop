@@ -60,8 +60,8 @@ const imagen3 = '../../../images/nike-slider.png'
 ---
 
 <Layout title="Dr. Mario IND">
-	<HeaderIndex home="#home" about="#about" shop="/Dr.-Mario-Shop/Shop/" />
-	<SliderPrincipal image01={imagen1} image02={imagen2}  image03={imagen3}client:load/>
+	<HeaderIndex home="#home" about="#about" shop="/Dr-Mario-Shop/Shop/" />
+	<SliderPrincipal image01={imagen1} image02={imagen2}  image03={imagen3} client:load/>
 	<div class="productos-destacados">
 		<div class="title__productos-destacados">
 			<span class="material-symbols-outlined">arrow_right_alt</span>
@@ -69,16 +69,15 @@ const imagen3 = '../../../images/nike-slider.png'
 		</div>
 		<CardsProductosNovedades client:load productos={productosDisponible} />
 	</div>
-	<!-- <Banner01/> -->
+	<SliderPrincipal image01={imagen1} image02={imagen2}  image03={imagen3} client:load/>
+
 	<div class="productos-destacados">
 		<div class="title__productos-destacados">
 			<span class="material-symbols-outlined">arrow_right_alt</span>
 			<h3> PRODUCTOS DESTACADOS</h3>
-		</div>
+		</div>	
 		<CardsProductos client:load productos={ArregloProductosDestacados} />
 	</div>
-	<!-- <Main/> -->
-	<About/>
 	<FooterIndex/>
 </Layout>
 
